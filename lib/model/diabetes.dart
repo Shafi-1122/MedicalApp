@@ -7,7 +7,9 @@ part 'diabetes.g.dart';
 
 @JsonSerializable()
 class Diabetes {
+  @JsonKey(name: 'medications')
   List<Medication>? medications;
+  @JsonKey(name: 'labs')
   List<Lab>? labs;
 
   Diabetes({this.medications, this.labs});

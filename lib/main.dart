@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:loginscreen/provider.dart';
+import 'package:loginscreen/view_model/provider.dart';
+import 'package:loginscreen/view/Splashscreen.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'Splashscreen.dart';
+// import 'Splashscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,3 +27,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+

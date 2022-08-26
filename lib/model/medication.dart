@@ -6,6 +6,7 @@ part 'medication.g.dart';
 
 @JsonSerializable()
 class Medication {
+  @JsonKey(name: 'medicationsClasses')
   List<MedicationsClass>? medicationsClasses;
 
   Medication({this.medicationsClasses});

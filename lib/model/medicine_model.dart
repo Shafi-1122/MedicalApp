@@ -6,6 +6,7 @@ part 'medicine_model.g.dart';
 
 @JsonSerializable()
 class MedicineModel {
+  @JsonKey(name: 'problems')
   List<Problem>? problems;
 
   MedicineModel({this.problems});

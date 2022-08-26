@@ -7,6 +7,8 @@ part 'class_name2.g.dart';
 
 @JsonSerializable()
 class ClassName2 {
+    @JsonKey(name: 'associatedDrug')
+
   List<AssociatedDrug>? associatedDrug;
   @JsonKey(name: 'associatedDrug#2')
   List<AssociatedDrug2>? associatedDrug2;

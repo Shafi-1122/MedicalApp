@@ -1,22 +1,20 @@
-// ignore_for_file: unused_element, prefer_const_constructors, non_constant_identifier_names, avoid_print
+// ignore_for_file: unused_element, prefer_const_constructors, non_constant_identifier_names, avoid_print, unused_local_variable, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:loginscreen/apis.dart';
-import 'package:loginscreen/provider.dart';
+import 'package:loginscreen/view_model/provider.dart';
 import 'package:provider/provider.dart';
 import 'HomeScreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:avoid_keyboard/avoid_keyboard.dart';
-class Screen2 extends StatefulWidget {
-  const Screen2({Key? key, required this.title}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  State<Screen2> createState() => _Screen2State();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _Screen2State extends State<Screen2> {
+class _LoginScreenState extends State<LoginScreen> {
   Future<void> getData() async {
     final prefs = await SharedPreferences.getInstance();
     final username = prefs.getString('username');
@@ -144,7 +142,6 @@ class _Screen2State extends State<Screen2> {
                               Spacer(),
                               Container(
                                 decoration: BoxDecoration(   borderRadius: BorderRadius.circular(13),),
-                                
                                 height: 50,
                                 width: 70,
                                 child: ElevatedButton(
@@ -156,12 +153,12 @@ class _Screen2State extends State<Screen2> {
                                       if (mycontroller.text ==
                                               context
                                                   .read<ProvidersClass>()
-                                                  .Username1 &&
+                                                  .username &&
                                           mycontroller1.text ==
                                               context
                                                   .read<ProvidersClass>()
-                                                  .Password1) {
-                                        // fetchdatafromapi();
+                                                  .password) {
+                                        
                                         StoreUsername();
                 
                                         mycontroller.clear();
@@ -176,7 +173,7 @@ class _Screen2State extends State<Screen2> {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(SnackBar(
                                           content: Text(
-                                              "Username and Password doesnot match"),
+                                              "Incorrect username or password"),
                                           margin: EdgeInsets.only(bottom:20,left: 20,right: 20),
                                           behavior: SnackBarBehavior.floating,
                                           backgroundColor: Colors.red,

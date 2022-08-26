@@ -1,11 +1,8 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'dart:async';
 import 'LoginScreen.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'LoginScreen.dart';
-import 'HomeScreen.dart';
+
+
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({Key? key, required this.title}) : super(key: key);
@@ -22,11 +19,11 @@ class _SplashscreenState extends State<Splashscreen> {
     super.initState();
 
     Timer(
-        Duration(seconds: 3),
+        Duration(seconds: 1),
         () => Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-                builder: (context) => Screen2(
+                builder: (context) => LoginScreen(
                       title: "null",
                     ))));
   }
